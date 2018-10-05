@@ -24,7 +24,7 @@
     "plexer": "0.0.1"
   },
   "devDependencies": {
-    "mocha": "*",
+    "mocha": "^3.2.0",
     "event-stream": "~3.1.0"
   },
   "scripts": {
