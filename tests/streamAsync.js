@@ -3,7 +3,7 @@
 
 var gSpawn = require("../"),
 	Stream = require("stream"),
-	Vinyl = require("vinyl"),
+	gutil = require("gulp-util"),
 	assert = require("assert"),
 	es = require("event-stream");
 
@@ -21,13 +21,13 @@ describe("gulp-spawn", function () {
 				outputStream = new Stream.PassThrough({objectMode: true}),
 				n = 0;
 
-			var fakeFile = new Vinyl({
+			var fakeFile = new gutil.File({
 				cwd: "./",
 				base: "test",
 				path: "test/file.js",
 				contents: new Stream.PassThrough()
 			});
-			var fakeFile2 = new Vinyl({
+			var fakeFile2 = new gutil.File({
 				cwd: "./",
 				base: "test",
 				path: "test/file2.js",
@@ -97,13 +97,13 @@ describe("gulp-spawn", function () {
 				outputStream = new Stream.PassThrough({objectMode: true}),
 				n = 0;
 
-			var fakeFile = new Vinyl({
+			var fakeFile = new gutil.File({
 				cwd: "./",
 				base: "test",
 				path: "test/file.js",
 				contents: new Stream.PassThrough()
 			});
-			var fakeFile2 = new Vinyl({
+			var fakeFile2 = new gutil.File({
 				cwd: "./",
 				base: "test",
 				path: "test/file2.js",
