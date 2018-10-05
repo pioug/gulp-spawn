@@ -26,6 +26,7 @@
   "devDependencies": {
     "event-stream": "^4.0.1",
     "mocha": "^5.2.0",
+    "prettier": "^1.14.3",
     "vinyl": "^2.2.0"
   },
   "scripts": {
