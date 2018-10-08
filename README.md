@@ -48,16 +48,6 @@ If you write spawn programs please consider taking the time to support stdin &
 stdout. Piping is one of the many reasons UNIX systems have endured the test
 of time.
 
-## Changelog
-
-- v0.1.0 - Initial Release
-- v0.2.0 - Added `filename` callback option
-- v0.2.1 - Fixed support for streams. Effeciency improvements.
-- v0.3.0 - Latest stream support and error emits.
-- v0.4.0 - Allow options argument to spawn
-- v0.4.1 - Replace gulp-util with individual packages
-- v0.4.2 - Revert v0.4.1 changes
-
 [npm-url]: https://npmjs.org/package/gulp-spawn
 [npm-image]: https://badge.fury.io/js/gulp-spawn.svg
 [depstat-url]: https://david-dm.org/pioug/gulp-spawn
