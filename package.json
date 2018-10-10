@@ -2,10 +2,10 @@
   "name": "gulp-spawn",
   "description": "spawn plugin for gulp",
   "version": "0.4.3",
-  "homepage": "https://github.com/hparra/gulp-spawn",
+  "homepage": "https://github.com/pioug/gulp-spawn",
   "repository": {
     "type": "git",
-    "url": "git://github.com/hparra/gulp-spawn.git"
+    "url": "git://github.com/pioug/gulp-spawn.git"
   },
   "author": {
     "name": "Hector Parra",
