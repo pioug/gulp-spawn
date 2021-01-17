@@ -7,11 +7,11 @@ var gSpawn = require("../"),
   assert = require("assert"),
   es = require("event-stream");
 
-describe("gulp-spawn", function() {
-  describe("in stream mode", function() {
-    it("should work with sync streams", function(done) {
+describe("gulp-spawn", function () {
+  describe("in stream mode", function () {
+    it("should work with sync streams", function (done) {
       var stream = gSpawn({
-        cmd: "cat"
+        cmd: "cat",
       });
 
       var inputStream = new Stream.PassThrough({ objectMode: true }),
@@ -22,18 +22,18 @@ describe("gulp-spawn", function() {
         cwd: "./",
         base: "test",
         path: "test/file.js",
-        contents: new Stream.PassThrough()
+        contents: new Stream.PassThrough(),
       });
       var fakeFile2 = new Vinyl({
         cwd: "./",
         base: "test",
         path: "test/file2.js",
-        contents: new Stream.PassThrough()
+        contents: new Stream.PassThrough(),
       });
 
       inputStream.pipe(stream).pipe(outputStream);
 
-      outputStream.on("readable", function() {
+      outputStream.on("readable", function () {
         var newFile;
         while ((newFile = outputStream.read())) {
           assert(newFile);
@@ -43,14 +43,14 @@ describe("gulp-spawn", function() {
           if (++n === 1) {
             assert.equal(newFile.path, "test/file.js");
             newFile.contents.pipe(
-              es.wait(function(err, data) {
+              es.wait(function (err, data) {
                 assert.equal(data, "plipplap");
               })
             );
           } else {
             assert.equal(newFile.path, "test/file2.js");
             newFile.contents.pipe(
-              es.wait(function(err, data) {
+              es.wait(function (err, data) {
                 assert.equal(data, "plopplup");
               })
             );
@@ -58,7 +58,7 @@ describe("gulp-spawn", function() {
         }
       });
 
-      outputStream.on("end", function() {
+      outputStream.on("end", function () {
         assert.equal(n, 2);
         done();
       });

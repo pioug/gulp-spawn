@@ -16,7 +16,7 @@ function gulpSpawn(options) {
     throw new PluginError(PLUGIN_NAME, 'command ("cmd") argument required');
   }
 
-  stream._transform = function(file, unused, cb) {
+  stream._transform = function (file, unused, cb) {
     if (file.isNull()) {
       stream.push(file);
       return cb();
@@ -37,7 +37,7 @@ function gulpSpawn(options) {
 
     // listen to stderr and emit errors if any
     var errBuffer = new Buffer(0);
-    program.stderr.on("readable", function() {
+    program.stderr.on("readable", function () {
       var chunk;
       while ((chunk = program.stderr.read())) {
         errBuffer = Buffer.concat(
@@ -46,7 +46,7 @@ function gulpSpawn(options) {
         );
       }
     });
-    program.stderr.on("end", function() {
+    program.stderr.on("end", function () {
       if (errBuffer.length) {
         stream.emit(
           "error",
@@ -61,7 +61,7 @@ function gulpSpawn(options) {
       var newBuffer = new Buffer(0);
 
       // when program receives data add it to buffer
-      program.stdout.on("readable", function() {
+      program.stdout.on("readable", function () {
         var chunk;
         while ((chunk = program.stdout.read())) {
           newBuffer = Buffer.concat(
@@ -72,7 +72,7 @@ function gulpSpawn(options) {
       });
 
       // when program finishes call callback
-      program.stdout.on("end", function() {
+      program.stdout.on("end", function () {
         file.contents = newBuffer;
         stream.push(file);
         cb();
@@ -80,7 +80,7 @@ function gulpSpawn(options) {
 
       // "execute"
       // write file buffer to program
-      program.stdin.write(file.contents, function() {
+      program.stdin.write(file.contents, function () {
         program.stdin.end();
       });
     } else {

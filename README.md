@@ -34,9 +34,9 @@ gulp
       args: ["-", "-resize", "50%", "-"],
       // optional
       opts: { cwd: "." },
-      filename: function(base, ext) {
+      filename: function (base, ext) {
         return base + "-half" + ext;
-      }
+      },
     })
   )
   .pipe(gulp.dest("./dist/images/"));

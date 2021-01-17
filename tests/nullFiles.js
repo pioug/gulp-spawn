@@ -7,10 +7,10 @@ var gSpawn = require("../"),
   assert = require("assert"),
   es = require("event-stream");
 
-describe("gulp-spawn", function() {
-  it("should pass null files through", function(done) {
+describe("gulp-spawn", function () {
+  it("should pass null files through", function (done) {
     var stream = gSpawn({
-      cmd: "cat"
+      cmd: "cat",
     });
 
     var count = 0;
@@ -19,17 +19,17 @@ describe("gulp-spawn", function() {
       cwd: "./",
       base: "test",
       path: "test/file.js",
-      contents: null
+      contents: null,
     });
 
     var fakeFile2 = new Vinyl({
       cwd: "./",
       base: "test",
       path: "test/file2.js",
-      contents: null
+      contents: null,
     });
 
-    stream.on("readable", function() {
+    stream.on("readable", function () {
       var newFile;
       while ((newFile = stream.read())) {
         assert(newFile);
@@ -45,7 +45,7 @@ describe("gulp-spawn", function() {
       }
     });
 
-    stream.on("end", function() {
+    stream.on("end", function () {
       assert.equal(count, 2);
       done();
     });

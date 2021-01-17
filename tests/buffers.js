@@ -7,11 +7,11 @@ var gSpawn = require("../"),
   assert = require("assert"),
   es = require("event-stream");
 
-describe("gulp-spawn", function() {
-  describe("in buffer mode", function() {
-    it("should work", function(done) {
+describe("gulp-spawn", function () {
+  describe("in buffer mode", function () {
+    it("should work", function (done) {
       var stream = gSpawn({
-        cmd: "cat"
+        cmd: "cat",
       });
 
       var inputStream = new Stream.PassThrough({ objectMode: true }),
@@ -22,18 +22,18 @@ describe("gulp-spawn", function() {
         cwd: "./",
         base: "test",
         path: "test/file.js",
-        contents: new Buffer("plipplap")
+        contents: new Buffer("plipplap"),
       });
       var fakeFile2 = new Vinyl({
         cwd: "./",
         base: "test",
         path: "test/file2.js",
-        contents: new Buffer("plipplup")
+        contents: new Buffer("plipplup"),
       });
 
       inputStream.pipe(stream).pipe(outputStream);
 
-      outputStream.on("readable", function() {
+      outputStream.on("readable", function () {
         var newFile;
         while ((newFile = outputStream.read())) {
           assert(newFile);
@@ -50,7 +50,7 @@ describe("gulp-spawn", function() {
         }
       });
 
-      outputStream.on("end", function() {
+      outputStream.on("end", function () {
         assert.equal(n, 2);
         done();
       });
