@@ -1,6 +1,6 @@
 # gulp-spawn
 
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][depstat-image]][depstat-url]
+[![NPM version][npm-image]][npm-url] [![Build Status][actions-image]][actions-url] [![Dependency Status][depstat-image]][depstat-url]
 
 Plugin to spawn a CLI program for piping with
 [gulp](https://github.com/wearefractal/gulp). Uses
@@ -52,5 +52,5 @@ of time.
 [npm-image]: https://badge.fury.io/js/gulp-spawn.svg
 [depstat-url]: https://david-dm.org/pioug/gulp-spawn
 [depstat-image]: https://david-dm.org/pioug/gulp-spawn.svg
-[travis-url]: https://www.travis-ci.org/pioug/gulp-spawn
-[travis-image]: https://www.travis-ci.org/pioug/gulp-spawn.svg?branch=master
+[actions-url]: https://github.com/pioug/gulp-spawn/actions
+[actions-image]: https://github.com/pioug/gulp-spawn/workflows/Run%20tests/badge.svg
