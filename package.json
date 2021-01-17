@@ -24,13 +24,14 @@
     "plugin-error": "^1.0.1"
   },
   "devDependencies": {
+    "eslint": "^7.18.0",
     "event-stream": "^4.0.1",
     "mocha": "^8.2.1",
     "prettier": "^2.2.1",
     "vinyl": "^2.2.0"
   },
   "scripts": {
-    "test": "mocha tests/*.js --exit"
+    "test": "eslint '**/*.js' & mocha tests/*.js --exit"
   },
   "engines": {
     "node": ">=12"

@@ -1,11 +1,8 @@
-/*global describe, it, beforeEach */
 "use strict";
 
 var gSpawn = require("../"),
-  Stream = require("stream"),
   Vinyl = require("vinyl"),
-  assert = require("assert"),
-  es = require("event-stream");
+  assert = require("assert");
 
 describe("gulp-spawn", function () {
   it("should pass null files through", function (done) {

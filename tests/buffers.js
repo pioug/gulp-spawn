@@ -1,11 +1,9 @@
-/*global describe, it, beforeEach */
 "use strict";
 
 var gSpawn = require("../"),
   Stream = require("stream"),
   Vinyl = require("vinyl"),
-  assert = require("assert"),
-  es = require("event-stream");
+  assert = require("assert");
 
 describe("gulp-spawn", function () {
   describe("in buffer mode", function () {
