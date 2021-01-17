@@ -33,7 +33,7 @@
     "test": "mocha tests/*.js --exit"
   },
   "engines": {
-    "node": ">= 6.0.0"
+    "node": ">=12"
   },
   "licenses": [
     {
